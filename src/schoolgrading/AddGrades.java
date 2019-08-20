@@ -57,11 +57,20 @@ public class AddGrades extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        table_results = new javax.swing.JTable();
+        tableStudent = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         comboForm1 = new javax.swing.JComboBox<>();
         comboTerm1 = new javax.swing.JComboBox<>();
         analyseclassPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableAnalyse = new javax.swing.JTable();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        JSyear = new com.toedter.calendar.JYearChooser();
+        jSpinForm = new com.toedter.components.JSpinField();
+        jButton3 = new javax.swing.JButton();
+        comboTerm2 = new javax.swing.JComboBox<>();
         ReportPanel = new javax.swing.JPanel();
         addResultPanel = new javax.swing.JPanel();
         comboForm = new javax.swing.JComboBox<>();
@@ -109,7 +118,7 @@ public class AddGrades extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(205, 205, 205)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(302, Short.MAX_VALUE))
+                .addContainerGap(342, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,7 +265,7 @@ public class AddGrades extends javax.swing.JFrame {
 
         jLabel10.setText("Form");
 
-        table_results.setModel(new javax.swing.table.DefaultTableModel(
+        tableStudent.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -264,7 +273,7 @@ public class AddGrades extends javax.swing.JFrame {
 
             }
         ));
-        jScrollPane2.setViewportView(table_results);
+        jScrollPane2.setViewportView(tableStudent);
 
         jButton1.setText("View");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -304,7 +313,7 @@ public class AddGrades extends javax.swing.JFrame {
                         .addComponent(comboTerm1, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton1)))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(118, Short.MAX_VALUE))
             .addComponent(jScrollPane2)
         );
         checkPeformanceLayout.setVerticalGroup(
@@ -327,17 +336,86 @@ public class AddGrades extends javax.swing.JFrame {
 
         gradepanel.add(checkPeformance, "card4");
 
-        analyseclassPanel.setBackground(new java.awt.Color(0, 102, 51));
+        analyseclassPanel.setBackground(new java.awt.Color(204, 255, 204));
+
+        tableAnalyse.setBackground(new java.awt.Color(255, 255, 204));
+        tableAnalyse.setForeground(new java.awt.Color(255, 51, 0));
+        tableAnalyse.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        jScrollPane1.setViewportView(tableAnalyse);
+
+        jLabel11.setFont(new java.awt.Font("Gill Sans MT Ext Condensed Bold", 0, 48)); // NOI18N
+        jLabel11.setText("Class Analysis");
+
+        jLabel12.setText("Year");
+
+        jLabel13.setText("Form ");
+
+        jButton3.setText("View Class");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
+        comboTerm2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Term 1", "Term 2", "Term 3" }));
+        comboTerm2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboTerm2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout analyseclassPanelLayout = new javax.swing.GroupLayout(analyseclassPanel);
         analyseclassPanel.setLayout(analyseclassPanelLayout);
         analyseclassPanelLayout.setHorizontalGroup(
             analyseclassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 698, Short.MAX_VALUE)
+            .addGroup(analyseclassPanelLayout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 732, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 6, Short.MAX_VALUE))
+            .addGroup(analyseclassPanelLayout.createSequentialGroup()
+                .addGroup(analyseclassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(analyseclassPanelLayout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel12)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(JSyear, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addComponent(jLabel13)
+                        .addGap(18, 18, 18)
+                        .addComponent(jSpinForm, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(84, 84, 84)
+                        .addComponent(comboTerm2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(144, 144, 144)
+                        .addComponent(jButton3))
+                    .addGroup(analyseclassPanelLayout.createSequentialGroup()
+                        .addGap(244, 244, 244)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         analyseclassPanelLayout.setVerticalGroup(
             analyseclassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 496, Short.MAX_VALUE)
+            .addGroup(analyseclassPanelLayout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(analyseclassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(analyseclassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(JSyear, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                        .addComponent(jSpinForm, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING))
+                    .addGroup(analyseclassPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton3)
+                        .addComponent(comboTerm2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(313, Short.MAX_VALUE))
         );
 
         gradepanel.add(analyseclassPanel, "card6");
@@ -348,7 +426,7 @@ public class AddGrades extends javax.swing.JFrame {
         ReportPanel.setLayout(ReportPanelLayout);
         ReportPanelLayout.setHorizontalGroup(
             ReportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 698, Short.MAX_VALUE)
+            .addGap(0, 738, Short.MAX_VALUE)
         );
         ReportPanelLayout.setVerticalGroup(
             ReportPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -505,7 +583,7 @@ public class AddGrades extends javax.swing.JFrame {
                             .addComponent(hscField, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(submitresultsbtn)
                             .addComponent(jButton2))))
-                .addContainerGap(65, Short.MAX_VALUE))
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         addResultPanelLayout.setVerticalGroup(
             addResultPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -621,72 +699,70 @@ public class AddGrades extends javax.swing.JFrame {
     private void submitresultsbtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitresultsbtnActionPerformed
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/schoolgrading", "root", "");
-            PreparedStatement pps = con.prepareStatement("SELECT * FROM `students data` WHERE `adm-no`=?");            
+            PreparedStatement pps = con.prepareStatement("SELECT * FROM `students data` WHERE `adm-no`=?");
             pps.setString(1, admField.getText());
             ResultSet rs = pps.executeQuery();
             if (rs.next()) {
-                
+
 //other
-                String admyear=rs.getString("doAdmission");
-                String classofAdm=rs.getString("classOfAdmission");
+                String admyear = rs.getString("doAdmission");
+                String classofAdm = rs.getString("classOfAdmission");
                 String table = comboForm.getSelectedItem().toString();
-                char ch1=(char)table.charAt(10);
-                char ch2=(char)table.charAt(11);
-                char ch3=(char)table.charAt(12);
-                char ch4=(char)table.charAt(13);
-                char ch5=(char)table.charAt(4);
-                char ch6=(char)classofAdm.charAt(5);
+                char ch1 = (char) table.charAt(10);
+                char ch2 = (char) table.charAt(11);
+                char ch3 = (char) table.charAt(12);
+                char ch4 = (char) table.charAt(13);
+                char ch5 = (char) table.charAt(4);
+                char ch6 = (char) classofAdm.charAt(5);
 
-                
-                String dbTable=ch1+""+ch2+""+ch3+""+ch4;
-                String []admYear=admyear.split(",");                
-               // System.out.println(admYear[1] + classofAdm +dbTable);
-               if(admYear[1].contains(dbTable)) {
-                  //System.out.println("Allowed to add data");
-                   if(ch5==ch6) {
-                  //System.out.println("Allowed to add data");       
+                String dbTable = ch1 + "" + ch2 + "" + ch3 + "" + ch4;
+                String[] admYear = admyear.split(",");
+                // System.out.println(admYear[1] + classofAdm +dbTable);
+                if (admYear[1].contains(dbTable)) {
+                    //System.out.println("Allowed to add data");
+                    if (ch5 == ch6) {
+                        //System.out.println("Allowed to add data");       
 //other                
-                PreparedStatement resultStmt = con.prepareStatement("SELECT * FROM `" + table + "` WHERE `adm` =? AND`Term`=? AND`examNo`=?");
-                resultStmt.setString(1, admField.getText());
-                resultStmt.setString(2, comboTerm.getSelectedItem().toString());
-                resultStmt.setString(3, (String) comboExam.getSelectedItem());
-                ResultSet result = resultStmt.executeQuery();
-                if (result.next()) {
-                    JOptionPane.showMessageDialog(null, "Results Already Exists");
-                } else {
-                    PreparedStatement ps = con.prepareStatement("INSERT INTO `" + table + "`(`adm`, `examNo`, `Term`, `english`,"
-                            + " `kiswahili`, `maths`, `chem`, `bio`, `phyc`, `hist`, `geo`, `cre`, `agric`, `homescience`, `comp`, `bst`)"
-                            + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
-                    ps.setString(1, admField.getText());
-                    ps.setString(2, (String) comboExam.getSelectedItem());
-                    ps.setString(3, comboTerm.getSelectedItem().toString());
-                    ps.setString(4, engfield.getText());
-                    ps.setString(5, kiswField.getText());
-                    ps.setString(6, mathsField.getText());
-                    ps.setString(7, chemField.getText());
-                    ps.setString(8, bioField.getText());
-                    ps.setString(9, phycField.getText());
-                    ps.setString(10, histField.getText());
-                    ps.setString(11, geoField.getText());
-                    ps.setString(12, creField.getText());
-                    ps.setString(13, AgricField.getText());
-                    ps.setString(14, hscField.getText());
-                    ps.setString(15, compField.getText());
-                    ps.setString(16, bstField.getText());
+                        PreparedStatement resultStmt = con.prepareStatement("SELECT * FROM `" + table + "` WHERE `adm` =? AND`Term`=? AND`examNo`=?");
+                        resultStmt.setString(1, admField.getText());
+                        resultStmt.setString(2, comboTerm.getSelectedItem().toString());
+                        resultStmt.setString(3, (String) comboExam.getSelectedItem());
+                        ResultSet result = resultStmt.executeQuery();
+                        if (result.next()) {
+                            JOptionPane.showMessageDialog(null, "Results Already Exists");
+                        } else {
+                            PreparedStatement ps = con.prepareStatement("INSERT INTO `" + table + "`(`adm`, `examNo`, `Term`, `english`,"
+                                    + " `kiswahili`, `maths`, `chem`, `bio`, `phyc`, `hist`, `geo`, `cre`, `agric`, `homescience`, `comp`, `bst`)"
+                                    + " VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+                            ps.setString(1, admField.getText());
+                            ps.setString(2, (String) comboExam.getSelectedItem());
+                            ps.setString(3, comboTerm.getSelectedItem().toString());
+                            ps.setString(4, engfield.getText());
+                            ps.setString(5, kiswField.getText());
+                            ps.setString(6, mathsField.getText());
+                            ps.setString(7, chemField.getText());
+                            ps.setString(8, bioField.getText());
+                            ps.setString(9, phycField.getText());
+                            ps.setString(10, histField.getText());
+                            ps.setString(11, geoField.getText());
+                            ps.setString(12, creField.getText());
+                            ps.setString(13, AgricField.getText());
+                            ps.setString(14, hscField.getText());
+                            ps.setString(15, compField.getText());
+                            ps.setString(16, bstField.getText());
 
-                    if (ps.executeUpdate() > 0) {
-                        JOptionPane.showMessageDialog(null, "Added successfully");
+                            if (ps.executeUpdate() > 0) {
+                                JOptionPane.showMessageDialog(null, "Added successfully");
+                            }
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Youve inputed the wrong class");
                     }
-                }
-                   } else {
-                    JOptionPane.showMessageDialog(null, "Youve inputed the wrong class"); 
-                }
-                  
+
                 } else {
-                  JOptionPane.showMessageDialog(null, "Wrong year ");  
+                    JOptionPane.showMessageDialog(null, "Wrong year ");
                 }
-                
-                
+
             } else {
                 JOptionPane.showMessageDialog(null, "invalid details details");
 
@@ -701,8 +777,8 @@ public class AddGrades extends javax.swing.JFrame {
     }//GEN-LAST:event_comboTermActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         try {
-             String form =comboForm1.getSelectedItem().toString();
+        try {
+            String form = comboForm1.getSelectedItem().toString();
             String sql = "SELECT `examNo`, `english`, `kiswahili`, `maths`, `chem`, `bio`,"
                     + " `phyc`, `hist`, `geo`, `cre`, `agric`, `homescience`, `comp`, "
                     + "`bst`  FROM `" + form + "` WHERE `adm`=? AND `Term`=? ";
@@ -712,7 +788,7 @@ public class AddGrades extends javax.swing.JFrame {
             ps.setString(2, comboTerm1.getSelectedItem().toString());
 
             ResultSet rs = ps.executeQuery();
-            table_results.setModel(DbUtils.resultSetToTableModel(rs));
+            tableStudent.setModel(DbUtils.resultSetToTableModel(rs));
         } catch (SQLException ex) {
 
             JOptionPane.showMessageDialog(this, ex.getMessage());
@@ -723,9 +799,35 @@ public class AddGrades extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_comboTerm1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    private void comboTerm2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboTerm2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboTerm2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+
+        try {
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/schoolgrading", "root", "");
+            String tableNm = "form" + jSpinForm.getValue() + "exams" + JSyear.getValue();
+            String sqlcount = "SELECT DISTINCT `adm` FROM  `" + tableNm + "`  WHERE `Term`=?";
+            PreparedStatement disStmt = con.prepareStatement(sqlcount);
+            disStmt.setString(1, comboTerm2.getSelectedItem().toString());
+            ResultSet disrs = disStmt.executeQuery();
+            while (disrs.next()) {
+//                System.out.println(disrs.getInt("adm"));
+                String sql = "SELECT AVG( `english`), AVG(`kiswahili`), AVG(`maths`), AVG(`chem`), AVG(`bio`), AVG(`phyc`),AVG(`hist`), AVG(`geo`),"
+                        + " AVG(`cre`), AVG(`agric`), AVG(`homescience`), AVG(`comp`), AVG(`bst`) FROM `" + tableNm + "` WHERE `adm`=?";
+                PreparedStatement ps = con.prepareStatement(sql);
+                ps.setString(1, disrs.getString("adm"));
+                ResultSet rs = ps.executeQuery();
+                tableAnalyse.setModel(DbUtils.resultSetToTableModel(rs));
+            }
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }//GEN-LAST:event_jButton3ActionPerformed
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -761,6 +863,7 @@ public class AddGrades extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AgricField;
     private javax.swing.JLabel AnalyseClassLabel;
+    private com.toedter.calendar.JYearChooser JSyear;
     private javax.swing.JPanel ReportPanel;
     private javax.swing.JLabel ReportformLabel;
     private javax.swing.JLabel addResultLabel;
@@ -779,6 +882,7 @@ public class AddGrades extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> comboForm1;
     private javax.swing.JComboBox<String> comboTerm;
     private javax.swing.JComboBox<String> comboTerm1;
+    private javax.swing.JComboBox<String> comboTerm2;
     private javax.swing.JTextField compField;
     private javax.swing.JTextField creField;
     private javax.swing.JTextField engfield;
@@ -788,8 +892,12 @@ public class AddGrades extends javax.swing.JFrame {
     private javax.swing.JTextField hscField;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -803,11 +911,14 @@ public class AddGrades extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private com.toedter.components.JSpinField jSpinForm;
     private javax.swing.JTextField kiswField;
     private javax.swing.JTextField mathsField;
     private javax.swing.JTextField phycField;
     private javax.swing.JButton submitresultsbtn;
-    private javax.swing.JTable table_results;
+    private javax.swing.JTable tableAnalyse;
+    private javax.swing.JTable tableStudent;
     // End of variables declaration//GEN-END:variables
 }
